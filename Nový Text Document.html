@@ -1,18 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+   <body>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="stylesheet" type="text/css" href="karma.css">
    <div style="text-align: center;">
    <img src="https://www.tagesschau.de/multimedia/bilder/zeman-105~_v-videowebl.jpg" alt="Miloš Zeman" width="500" height="400"><img>
-   <form>
+   <form onsubmit="checkPassword(event)">
       <label for="name">Name:</label>
       <input type="text" name="name" id="name" placeholder="Your Name">
       <label for="password">Password:</label>
       <input type="password" name="password" id="password" placeholder="Password">
+      <br><br>
+      <label for="fileUpload">Upload a file:</label>
+      <input type="file" id="fileUpload" name="fileUpload">
+      <br><br>
       <input type="submit" value="Submit">
    </form>
-
-</head>
+   <script>
+      function checkPassword(event) {
+        event.preventDefault(); // Prevents the form from submitting
+        
+        var enteredPassword = document.getElementById("password").value;
+        // Replace "yourpassword" with the actual password you want to check
+        if (enteredPassword === "Nguyen1156") {
+          var fileInput = document.getElementById("fileUpload");
+          if (fileInput.files.length > 0) {
+            alert("Password is correct. File uploaded!");
+            // Redirect to another file after successful password and file upload
+            window.location.href = "black child experiment.html";
+          } else {
+            alert("Please select a file to upload.");
+          }
+        } else {
+          alert("Incorrect password. Please try again.");
+        }
+      }
+    </script>
+    </body>
 </html>
