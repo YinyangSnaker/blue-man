@@ -8,36 +8,31 @@
    <div style="text-align: center;">
    <img src="https://www.tagesschau.de/multimedia/bilder/zeman-105~_v-videowebl.jpg" alt="Miloš Zeman" width="500" height="400"><img>
    <form onsubmit="checkPassword(event)">
-      <label for="name">Name:</label>
-      <input type="text" name="name" id="name" placeholder="Your Name">
-      <label for="password">Password:</label>
-      <input type="password" name="password" id="password" placeholder="Password">
-      <br><br>
-      <label for="fileUpload">Upload a file:</label>
-      <input type="file" id="fileUpload" name="fileUpload">
-      <br><br>
-      <input type="submit" value="Submit">
-   </form>
-   <script>
-      function checkPassword(event) {
-        event.preventDefault(); // Prevents the form from submitting
-        
-        var enteredPassword = document.getElementById("password").value;
-        // Replace "yourpassword" with the actual password you want to check
-        if (enteredPassword === "Nguyen1156") {
-          var fileInput = document.getElementById("fileUpload");
-          if (fileInput.files.length > 0) {
-            alert("Password is correct. File uploaded!");
-            // Redirect to another file after successful password and file upload
-            window.location.href = "black child experiment.html";
-          } else {
-            alert("Please select a file to upload.");
-          }
-        } else {
-          alert("Incorrect password. Please try again.");
-        }
+    <label for="name">Name:</label>
+    <input type="text" name="name" id="name" placeholder="Your Name">
+    <label for="password">Password:</label>
+    <input type="password" name="password" id="password" placeholder="Password">
+    <input type="submit" value="Submit">
+  </form>
+  
+  <script>
+    function checkPassword(event) {
+      event.preventDefault(); // Prevents the form from submitting normally
+  
+      // Get the password input value
+      var passwordInput = document.getElementById('password').value;
+  
+      // Check if the password is correct (Replace 'your_password' with the correct password)
+      if (passwordInput === 'Nguyen1156') {
+        // Redirect to another file (Replace 'file_url' with the actual URL of the file)
+        window.location.href = 'black child experiment.html';
+      } else {
+        // Password is incorrect, you can display an error message or handle it accordingly
+        alert('Incorrect password! Please try again.');
       }
-    </script>
+    }
+  </script>
+
     </body>
     // git add .
     // git status
