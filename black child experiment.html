@@ -2,52 +2,55 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <title>Coffee Restaurant</title>
-  <style>
-    /* CSS styles go here */
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f4f4f4;
-    }
-
-    header {
-      background-color: #663300;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-    }
-
-    nav {
-      background-color: #996633;
-      color: #fff;
-      text-align: center;
-      padding: 10px;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: #fff;
-      margin: 0 10px;
-    }
-
-    section {
-      padding: 20px;
-    }
-
-    footer {
-      background-color: #333;
-      color: #fff;
-      text-align: center;
-      padding: 10px;
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-    }
-
-  </style>
+    <meta charset="UTF-8">
+    <title>Coffee Restaurant</title>
+    <style>
+      /* CSS styles including box model */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+      }
+  
+      header {
+        background-color: #663300;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+      }
+  
+      nav {
+        background-color: #996633;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+      }
+  
+      nav a {
+        text-decoration: none;
+        color: #fff;
+        margin: 0 10px;
+      }
+  
+      section {
+        padding: 20px;
+        margin: 20px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #fff;
+      }
+  
+      footer {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+      }
+    </style>
 </head>
 
 <body>
@@ -55,7 +58,7 @@
     <a href="black child experiment.html">Home</a>
     <a href="menu.html">Menu</a>
     <a href="New Text Document.html">About Us</a>
-    <a href="service.html">service</a>
+    <a href="service.html">Service</a>
   </nav>
   <header>
     <h1>Welcome to Our Coffee Restaurant</h1>
@@ -89,9 +92,36 @@
     <p>Phone: 123-456-7890</p>
     <p>Email: ourcoffeeshop@coffeerestaurant.com</p>
   </section>
+
+  <section id="special">
+    <h2>Special of the Day</h2>
+    <p id="specialItem">Check back later for today's special!</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2023 Coffee Restaurant</p>
+  </footer>
+
+  <script>
+    // JavaScript to set the special item based on the day of the week
+    const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    const specialItems = [
+      'Caramel Macchiato',
+      'Pumpkin Spice Latte',
+      'Mocha Frappuccino',
+      'Vanilla Cold Brew',
+      'Espresso Con Panna',
+      'Iced Cinnamon Almondmilk Macchiato',
+      'Hazelnut Latte'
+    ];
+
+    const today = new Date().getDay();
+    const specialIndex = today % specialItems.length;
+    const specialItem = specialItems[specialIndex];
+
+    const specialItemElement = document.getElementById('specialItem');
+    specialItemElement.textContent = `Today's Special: ${specialItem}`;
+  </script>
 </body>
 
 </html>
-
-
-
