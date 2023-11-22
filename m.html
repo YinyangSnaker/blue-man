@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <script>
+        // Definice objektu automobilu
+let car = {
+  brand: 'Toyota',
+  model: 'Corolla',
+  year: 2022,
+  color: 'blue',
+  fuelType: 'petrol',
+  mileage: 15000,
+
+  // Metoda pro získání informací o automobilu
+  getCarInfo: function() {
+    return `This ${this.color} ${this.year} ${this.brand} ${this.model} has ${this.mileage} miles on it.`;
+  },
+
+  // Metoda pro aktualizaci stavu najetých kilometrů
+  updateMileage: function(newMileage) {
+    if (newMileage > this.mileage) {
+      this.mileage = newMileage;
+      return `Mileage updated to ${this.mileage} miles.`;
+    } else {
+      return 'New mileage should be greater than the current mileage.';
+    }
+  }
+};
+
+// Testování vlastností a metod objektu automobilu
+console.log(car.getCarInfo()); // Vypíše informace o automobilu
+console.log(car.updateMileage(18000)); // Aktualizuje stav najetých kilometrů
+console.log(car.getCarInfo()); // Vypíše aktualizované informace o automobilu
+
+
+    </script>
+</html>
